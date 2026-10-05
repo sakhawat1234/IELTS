@@ -107,7 +107,8 @@ export function gradeQuiz(root, groups, { name = 'q', reveal = true } = {}) {
         given = input.value.trim();
         const ok = accepted(item);
         const limitWords = group.maxWords || 0;
-        const tooLong = limitWords && wordCount(given) > limitWords;
+        // A number written with spaces (a phone number) still counts as one number.
+        const tooLong = limitWords && wordCount(given.replace(/(\d)\s+(?=\d)/g, '$1')) > limitWords;
         got = !tooLong && ok.includes(normalise(given)) ? 1 : 0;
         right = (Array.isArray(item.answer) ? item.answer[0] : item.answer);
         if (tooLong) given += ' (over the word limit)';

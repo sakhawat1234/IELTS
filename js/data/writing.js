@@ -42,6 +42,7 @@ The most striking change came after 2017 among the over-55s. Having risen only g
     chart: {
       type: 'bar',
       unit: 'hours',
+      unitLabel: 'hours per week',
       max: 16,
       x: ['TV and streaming', 'Exercise and sport', 'Socialising', 'Reading'],
       series: [
@@ -91,6 +92,163 @@ When water is needed, a pump draws it from the tank and sends it into the house.
       'The passive voice is used naturally for a process: "is held", "are removed", "is directed".',
       'Sequencing language varies: First, Before it reaches, then, When water is needed.',
       'Nothing is added that is not in the diagram.',
+    ],
+  },
+  {
+    id: 't1-spending',
+    task: 1,
+    level: 2,
+    title: 'Pie charts: household spending, 1995 and 2025',
+    prompt: 'The pie charts below show how the average household in one country spent its income in 1995 and 2025. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
+    chart: {
+      type: 'pie',
+      labels: ['Housing', 'Food', 'Transport', 'Leisure', 'Other'],
+      pies: [
+        { title: '1995', values: [22, 34, 14, 10, 20] },
+        { title: '2025', values: [35, 18, 17, 14, 16] },
+      ],
+    },
+    model: `The pie charts compare the proportion of household income spent on five categories in one country in 1995 and 2025.
+
+Overall, the most significant change was the reversal in the positions of food and housing: food was the largest expense in 1995, but by 2025 housing had taken its place by a wide margin. Spending on transport and leisure rose slightly, while the share for other items fell.
+
+In 1995, just over a third of income (34%) went on food, compared with 22% on housing. Thirty years later, the pattern had changed dramatically. The share devoted to housing had risen by 13 percentage points to 35%, whereas the proportion spent on food had almost halved, falling to 18%.
+
+The remaining categories saw more modest changes. Transport accounted for 14% of spending in 1995 and 17% in 2025, and leisure grew from a tenth of the budget to 14%. Meanwhile, the share allocated to other items declined from a fifth to 16%.`,
+    why: [
+      'The overview identifies the single biggest change (housing and food swapping places) before any detail.',
+      'Proportion language is varied: "just over a third", "almost halved", "a tenth", "a fifth".',
+      'Percentage points are used correctly for the difference between two percentages (22% → 35% = 13 points).',
+      'Small changes are grouped in one paragraph instead of being described one by one.',
+    ],
+  },
+  {
+    id: 't1-museums',
+    task: 1,
+    level: 2,
+    title: 'Table: visitors to five city museums',
+    prompt: 'The table below shows the number of visitors to five museums in one city in 2015, 2020 and 2025. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
+    chart: {
+      type: 'table',
+      caption: 'Visitors (thousands)',
+      head: ['Museum', '2015', '2020', '2025'],
+      rows: [
+        ['History Museum', '820', '310', '940'],
+        ['Science Museum', '650', '240', '710'],
+        ['Art Gallery', '540', '190', '480'],
+        ['Natural History Museum', '410', '160', '530'],
+        ['Maritime Museum', '120', '60', '95'],
+      ],
+    },
+    model: `The table shows how many people visited five museums in one city in 2015, 2020 and 2025.
+
+Overall, all five museums experienced a sharp fall in visitor numbers in 2020, followed by a recovery by 2025. However, the recovery was uneven: three museums ended the period more popular than in 2015, while two did not regain their earlier levels. The History Museum was the most visited attraction in every year.
+
+In 2015, the History Museum attracted 820,000 visitors, ahead of the Science Museum (650,000) and the Art Gallery (540,000). Five years later, attendance at every museum had dropped dramatically, with the History Museum falling to 310,000, little more than a third of its earlier figure, and the Maritime Museum halving from 120,000 to 60,000.
+
+By 2025, the History and Science Museums had surpassed their 2015 totals, reaching 940,000 and 710,000 respectively. The most impressive growth was at the Natural History Museum, where numbers rose to 530,000, some 120,000 more than in 2015, allowing it to overtake the Art Gallery. By contrast, the Art Gallery (480,000) and the Maritime Museum (95,000) remained below their original levels.`,
+    why: [
+      'With a table, you must choose: the model picks the 2020 fall, the uneven recovery and one overtaking.',
+      'Numbers are written accurately in thousands (820,000), matching the table heading.',
+      '"Respectively", "surpassed", "overtake" and "remained below" show a range of comparison language.',
+    ],
+  },
+  {
+    id: 't1-village',
+    task: 1,
+    level: 3,
+    title: 'Maps: changes to the village of Northfield',
+    prompt: 'The maps below show the village of Northfield in 2000 and today. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
+    chart: {
+      type: 'map',
+      maps: [
+        {
+          title: 'Northfield, 2000',
+          items: [
+            { label: 'Farmland', kind: 'green', x: 10, y: 10, w: 190, h: 90 },
+            { label: 'Woodland', kind: 'green', x: 210, y: 10, w: 80, h: 90 },
+            { label: 'Main Road', kind: 'road', x: 0, y: 112, w: 300, h: 14 },
+            { label: 'Shop', kind: 'building', x: 20, y: 140, w: 60, h: 40 },
+            { label: 'Houses', kind: 'building', x: 95, y: 140, w: 80, h: 40 },
+            { label: 'School', kind: 'building', x: 210, y: 140, w: 80, h: 40 },
+            { label: 'River', kind: 'water', x: 0, y: 205, w: 300, h: 30 },
+          ],
+        },
+        {
+          title: 'Northfield, today',
+          items: [
+            { label: 'Housing estate', kind: 'building', x: 10, y: 10, w: 120, h: 90 },
+            { label: 'Supermarket', kind: 'building', x: 138, y: 10, w: 82, h: 90 },
+            { label: 'Woodland', kind: 'green', x: 228, y: 10, w: 62, h: 90 },
+            { label: 'Main Road', kind: 'road', x: 0, y: 112, w: 300, h: 14 },
+            { label: 'Café', kind: 'building', x: 20, y: 140, w: 60, h: 40 },
+            { label: 'Houses', kind: 'building', x: 95, y: 140, w: 80, h: 40 },
+            { label: 'School', alt: 'School (larger, extended to the west)', kind: 'building', x: 185, y: 140, w: 105, h: 40 },
+            { label: 'Park', kind: 'green', x: 185, y: 186, w: 105, h: 16 },
+            { label: 'River', kind: 'water', x: 0, y: 205, w: 300, h: 30 },
+            { label: 'Footbridge', kind: 'road', x: 60, y: 205, w: 10, h: 30 },
+          ],
+        },
+      ],
+    },
+    model: `The maps illustrate how the village of Northfield has changed between 2000 and the present day.
+
+Overall, the village has become considerably more developed, particularly to the north of the main road, where farmland has given way to housing and retail. The area south of the road has seen only minor alterations, and the main road itself has remained unchanged.
+
+The most dramatic transformation has taken place in the northern half of the village. In 2000, this area consisted almost entirely of farmland, with woodland in the north-east corner. The farmland has since been replaced by a housing estate and a supermarket, and the woodland has been reduced slightly in size.
+
+South of the main road, the row of houses remains, but the shop has been converted into a café. The school has been extended to the west, and a small park has been created between the school and the river. Finally, a footbridge has been built across the river, where there was previously no crossing.`,
+    why: [
+      'Map reports use the present perfect passive for change: "has been replaced", "has been extended".',
+      'Location language orients the reader: to the north of, in the north-east corner, between the school and the river.',
+      'The overview separates the big change (north) from the small changes (south).',
+      'Only features on the maps are described; there is no guessing about why the changes happened.',
+    ],
+  },
+  {
+    id: 't1-college',
+    task: 1,
+    level: 3,
+    title: 'Bar chart and pie chart: a college\'s students',
+    prompt: 'The bar chart shows the number of students enrolled in four subject areas at a college in 2015 and 2025. The pie chart shows how students travelled to the college in 2025. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
+    chart: {
+      type: 'mixed',
+      parts: [
+        {
+          title: 'Students enrolled by subject area',
+          chart: {
+            type: 'bar',
+            unit: 'students',
+            max: 1600,
+            x: ['Business', 'Engineering', 'Health', 'Arts'],
+            series: [
+              { name: '2015', values: [1200, 900, 600, 800] },
+              { name: '2025', values: [1500, 1000, 1300, 500] },
+            ],
+          },
+        },
+        {
+          title: 'How students travelled to college, 2025',
+          chart: {
+            type: 'pie',
+            labels: ['Bus', 'Car', 'Bicycle', 'Walk', 'Train'],
+            pies: [{ title: '2025', values: [38, 24, 16, 12, 10] }],
+          },
+        },
+      ],
+    },
+    model: `The bar chart compares enrolment in four subject areas at a college in 2015 and 2025, while the pie chart shows the means of transport students used to reach the college in 2025.
+
+Overall, total enrolment grew over the decade, with Health showing by far the largest increase and Arts the only decline. In 2025, the bus was the most common way of travelling to college, and the great majority of students did not travel by car.
+
+Business was the most popular subject area in both years, rising from 1,200 to 1,500 students. Engineering grew only marginally, from 900 to 1,000. The most striking change was in Health, where numbers more than doubled from 600 to 1,300, moving it from the smallest to the second-largest subject area. Arts, in contrast, fell from 800 students to 500.
+
+Regarding transport, the bus accounted for 38% of journeys in 2025, followed by the car at just under a quarter (24%). The remaining students cycled (16%), walked (12%) or took the train (10%). In other words, around three-quarters of students used a means of transport other than the car.`,
+    why: [
+      'With two charts, the introduction and the overview cover both; neither is ignored.',
+      'Each chart gets its own body paragraph, so the report stays easy to follow.',
+      'The writer does not invent a link between the charts (for example, that Health students take the bus).',
+      'The final sentence adds a useful calculation (24% by car → around three-quarters not by car).',
     ],
   },
   {
@@ -180,6 +338,51 @@ In conclusion, I believe that the advantages of working from home outweigh the d
       'The question asks for a judgement ("outweigh?"), and the essay gives one clearly.',
       'Advantages are considered from two perspectives (employees and employers).',
       'Paragraph 4 resolves the tension between the two sides instead of simply listing them.',
+    ],
+  },
+  {
+    id: 't2-secondhand',
+    task: 2,
+    level: 3,
+    type: 'Two-part question',
+    title: 'Buying second-hand goods',
+    prompt: 'Nowadays, more and more people choose to buy second-hand goods, such as clothes and furniture, rather than new ones. Why is this happening? Is it a positive or negative development?',
+    model: `In recent years, buying used clothing, furniture and electronics has become increasingly mainstream, especially among younger consumers. This trend is driven mainly by financial pressure and changing attitudes, and in my view it is a largely positive development.
+
+The most obvious reason is cost. As rents and food prices have risen in many countries, households have less money for non-essential purchases, and a second-hand sofa or coat can cost a fraction of its original price. Technology has also made used goods far easier to find. Online marketplaces and resale apps allow people to browse thousands of items from home, which has removed much of the inconvenience once associated with charity shops and markets. Finally, growing awareness of environmental issues has made second-hand buying fashionable rather than embarrassing, particularly among people in their twenties.
+
+I believe this shift is mostly beneficial. Above all, it reduces waste. Clothing production uses vast quantities of water and energy, and every item that is reused rather than thrown away lowers this demand. Second-hand markets also make good-quality products accessible to people on low incomes, and they create small businesses for those who repair or resell items.
+
+Admittedly, the trend is not without drawbacks. Some used products, such as cheap electrical goods or children's car seats, may not meet current safety standards, and buyers have fewer rights if something goes wrong. Retailers of new goods may also lose sales. However, these risks can be managed through clearer safety information, and the environmental and social benefits are, in my opinion, far more significant.
+
+In conclusion, people are turning to second-hand goods because they are cheaper, easier to find and more socially acceptable than in the past. Overall, I regard this as a positive change, provided that buyers are protected from unsafe products.`,
+    why: [
+      'A two-part question needs two answers. Paragraph 2 answers "Why?"; paragraphs 3–4 answer "Positive or negative?".',
+      'The introduction previews both answers, so the examiner sees at once that the whole task is covered.',
+      'Reasons are explained, not just listed: each has a mechanism (prices rose → less money for extras).',
+      'The concession paragraph ("Admittedly...") shows balance without weakening the clear position.',
+    ],
+  },
+  {
+    id: 't2-elderly',
+    task: 2,
+    level: 2,
+    type: 'Discussion',
+    title: 'Who should look after elderly people?',
+    prompt: 'In many countries, the number of elderly people is growing. Some people think that families should be responsible for caring for their older relatives, while others believe this is the responsibility of the government. Discuss both views and give your own opinion.',
+    model: `As life expectancy rises, societies face difficult questions about how older people should be supported. Some argue that this duty belongs to families, while others believe the state should take the lead. In my view, families and governments should share the responsibility, with the state providing a safety net that families cannot.
+
+Those who favour family care point out that relatives usually know an elderly person's needs and preferences better than any institution. In many cultures, including those of South Asia, caring for parents is regarded as a moral obligation and a way of repaying the care received in childhood. Older people who live with their children or grandchildren also tend to feel less lonely, and they can contribute to the household, for example by helping with childcare.
+
+On the other hand, there are strong arguments for government responsibility. Modern families are often smaller and more scattered than in the past, as adult children move to cities or abroad for work. Many cannot give up their jobs to provide full-time care, and some elderly people need specialist medical support that only trained professionals can provide. Without public funding, older people with no relatives nearby, or whose families are poor, could be left without help.
+
+I believe the most realistic approach combines the two. Families should remain the first source of emotional support and everyday help where this is possible, but governments must fund healthcare, pensions and professional care for those with complex needs or no family support. Some countries also give carers allowances or paid leave, which allows relatives to help without falling into poverty.
+
+In conclusion, although families have an important role to play, the growing number of elderly people means that governments cannot leave care entirely to them. A shared system is both fairer and more sustainable.`,
+    why: [
+      'Despite the label "discuss both views", the writer must still give an opinion — here a balanced, shared-responsibility view stated in the introduction.',
+      'A culturally relevant example (South Asia) is used naturally, which is fine as long as it supports the point.',
+      'The opinion paragraph is practical and specific ("carers allowances or paid leave") rather than vague.',
     ],
   },
 ];

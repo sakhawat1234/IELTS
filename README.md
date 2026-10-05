@@ -13,16 +13,17 @@ database, no tracking. Progress is saved in the learner's own browser
 | Area | Contents |
 |---|---|
 | Placement check | 24 questions (grammar, vocabulary, reading) that recommend a starting stage |
-| Study plan | 12 weeks × 5 tasks, ticked off as you go, plus daily habits |
-| Lessons | 24 lessons: 6 per skill across Foundation (band 4–5), Intermediate (5.5–6) and Advanced (6.5–7+) |
-| Reading | 3 original passages (12–14 questions each): TFNG, YNNG, headings, matching, MCQ, completion; timer, band estimate, an explanation for every answer |
-| Listening | 4 sets covering Parts 1–4, read aloud by the browser's built-in voices (a different voice per speaker), with the transcript after marking |
-| Writing | 3 Task 1 charts (line, bar, process) drawn as SVG and 4 Task 2 essay types; timer, word count, autosave, band-7 checklist, model answers with notes |
-| Speaking | 5 full sets (Parts 1–3) with a 1-minute + 2-minute Part 2 timer, an in-browser recorder (audio never leaves the device), model long turns |
-| Vocabulary | 8 topics × 12 words with spaced-repetition flashcards |
+| Study plan | 12 weeks, 104 tasks covering every lesson and practice item in teaching order, plus daily habits |
+| Lessons | 61 detailed lessons in modules (Listening 14, Reading 13, Writing 25, Speaking 9): every question type and every Task 1/Task 2 type, each with worked examples, a Bengali summary, a key-words glossary and a marked practice check |
+| Reading | 4 original passages (12–14 questions each): TFNG, YNNG, headings, matching information, sentence endings, MCQ, summary completion; timer, band estimate, an explanation for every answer, difficult words with Bengali meanings |
+| Listening | 6 sets covering Parts 1–4, read aloud by the browser's built-in voices (a different voice per speaker), with the transcript after marking |
+| Writing | 7 Task 1 visuals (line, bar, pie, table, map, process, mixed) drawn as SVG and 6 Task 2 essays covering every question type; timer, word count, autosave, band-7 checklist, model answers with notes |
+| Speaking | 8 full sets (Parts 1–3), a 16-topic Part 1 bank with sample answers, with a 1-minute + 2-minute Part 2 timer, an in-browser recorder (audio never leaves the device), model Part 2 and Part 3 answers |
+| Vocabulary | 16 topics × 20 words plus 25 academic words and 25 linking words, each with a definition, a Bengali meaning and an example; spaced-repetition flashcards |
 | Grammar | 8 units with marked exercises |
 | Mock test | Listening, Reading, Writing and Speaking under test conditions, combined into an estimated overall band |
 | Tools | Band calculator, progress dashboard with trend chart |
+| Bengali help | Bengali summaries, glossaries and word meanings for Bangladeshi learners; one button (বাংলা) hides them all |
 
 All passages, scripts, questions and model answers are original. Band
 estimates use commonly published conversion tables and are approximate.
@@ -50,7 +51,7 @@ an `/ielts` folder on an existing site) works the same way: upload the files.
 
 Content lives in `js/data/` as plain JavaScript objects:
 
-- `lessons-*.js` — lessons per skill (`level` 1–3, HTML `body`)
+- `lessons-*.js` — lessons per skill (`module`, `level` 1–3, HTML `body`, Bengali `bn` summary, `glossary`, `practice` question groups)
 - `reading.js` — passages and question groups
 - `listening.js` — scripts (speaker, line) and question groups
 - `writing.js` — tasks, chart data, model answers

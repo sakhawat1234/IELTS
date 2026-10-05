@@ -1,5 +1,5 @@
 import { store } from '../store.js';
-import { crumbs, levelPill, countdown, esc } from '../util.js';
+import { crumbs, levelPill, countdown, esc, glossary } from '../util.js';
 import { setById, descriptors } from '../data/speaking.js';
 import { bandLabel } from '../bands.js';
 
@@ -116,6 +116,8 @@ ${crumbs([['#/', 'Home'], ['#/speaking', 'Speaking'], [null, set.title]])}
   <div class="passage">${set.model.split('\n\n').map((p) => `<p>${esc(p)}</p>`).join('')}</div>
   <h3>Useful language from this answer</h3>
   <p>${set.language.map((l) => `<span class="pill" style="margin:0 4px 6px 0">${esc(l)}</span>`).join('')}</p>
+  ${set.glossary ? glossary(set.glossary, 'Word or phrase') : ''}
+  ${set.p3model ? `<h3>Model Part 3 answer</h3><p><strong>${esc(set.p3model[0])}</strong></p><div class="passage"><p>${esc(set.p3model[1])}</p></div><p class="small muted">Notice the shape: direct answer → reason → example from real life → a second point or a balancing view.</p>` : ''}
   <p class="small muted">Do not memorise model answers: examiners recognise rehearsed speech and mark it down. Borrow the structure and the phrases instead.</p>
 </details>`;
 

@@ -94,3 +94,16 @@ export function shuffle(list) {
 export function crumbs(items) {
   return `<p class="crumbs">${items.map(([href, label]) => (href ? `<a href="${href}">${esc(label)}</a>` : esc(label))).join(' › ')}</p>`;
 }
+
+/** Inline Bengali help, hidden when the learner switches Bengali off. */
+export function bn(text) {
+  return text ? `<span class="bn" lang="bn">${esc(text)}</span>` : '';
+}
+
+/**
+ * A key-words table: [['english', 'বাংলা', optional note], ...].
+ */
+export function glossary(rows, title = 'Key words') {
+  if (!rows || !rows.length) return '';
+  return `<div class="table-scroll"><table class="gloss"><tr><th>${esc(title)}</th><th>Meaning <span class="bn" lang="bn">· বাংলা অর্থ</span></th></tr>${rows.map(([en, meaning, note]) => `<tr><td><strong>${esc(en)}</strong>${note ? `<br><span class="small muted">${esc(note)}</span>` : ''}</td><td class="bn" lang="bn">${esc(meaning)}</td></tr>`).join('')}</table></div>`;
+}

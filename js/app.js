@@ -13,6 +13,7 @@ const ROUTES = [
   [/^listening\/([\w-]+)$/, 'listening', ['id']],
   [/^writing\/([\w-]+)$/, 'writing', ['id']],
   [/^speaking\/([\w-]+)$/, 'speaking', ['id']],
+  [/^part1$/, 'part1', []],
   [/^vocabulary$/, 'vocab'],
   [/^vocabulary\/([\w-]+)$/, 'vocab', ['topic']],
   [/^grammar$/, 'grammar'],
@@ -97,6 +98,15 @@ document.addEventListener('click', (e) => {
     render();
   }
 });
+
+const bnToggle = document.querySelector('.bn-toggle');
+const paintBn = () => bnToggle?.setAttribute('aria-pressed', String(!document.documentElement.classList.contains('hide-bn')));
+bnToggle?.addEventListener('click', () => {
+  const hide = document.documentElement.classList.toggle('hide-bn');
+  try { localStorage.setItem('band7-bn', hide ? 'off' : 'on'); } catch { /* still works for this visit */ }
+  paintBn();
+});
+paintBn();
 
 window.addEventListener('hashchange', render);
 render();

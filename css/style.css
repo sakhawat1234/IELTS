@@ -24,6 +24,7 @@
   --shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 1px 3px rgba(16, 24, 40, .08);
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --bengali: "Noto Sans Bengali", "Hind Siliguri", "Nirmala UI", "Vrinda", "Shonar Bangla", sans-serif;
   color-scheme: light;
 }
 
@@ -83,6 +84,18 @@ li { margin-bottom: .3em; }
 .skip { position: absolute; left: -999px; top: 8px; background: var(--surface); padding: 8px 12px; z-index: 10; }
 .skip:focus { left: 8px; }
 
+/* ---------- Bengali help ---------- */
+
+.bn { font-family: var(--bengali); font-size: .95em; color: var(--muted); }
+.hide-bn .bn { display: none !important; }
+.bn-toggle { order: 2; margin-left: auto; background: rgba(255, 255, 255, .14); color: inherit; border: 1px solid rgba(255, 255, 255, .45); border-radius: 8px; padding: 4px 10px; font: 600 .95rem var(--bengali); cursor: pointer; }
+.bn-toggle[aria-pressed="false"] { opacity: .6; text-decoration: line-through; }
+@media (prefers-color-scheme: dark) { .bn-toggle { color: var(--text); border-color: var(--line); background: var(--surface-2); } }
+.gloss th:first-child, .gloss td:first-child { width: 38%; }
+.gloss td.bn { color: var(--text); }
+.bn-note { font-family: var(--bengali); background: var(--surface-2); border-radius: 10px; padding: 10px 14px; margin: 0 0 1em; color: var(--text); }
+.bn-note::before { content: "বাংলায়: "; font-weight: 600; color: var(--brand-2); }
+
 /* ---------- top bar ---------- */
 
 .topbar { background: var(--brand); color: var(--brand-ink); position: sticky; top: 0; z-index: 5; }
@@ -91,12 +104,12 @@ li { margin-bottom: .3em; }
 .brand { display: flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
 @media (prefers-color-scheme: dark) { .brand { color: var(--text); } }
 .brand__mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: #fff; color: #1f4e79; font-weight: 800; }
-.nav { display: flex; flex-wrap: wrap; gap: 4px 2px; margin-left: auto; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px 2px; margin-left: 12px; order: 3; }
 .nav a { color: inherit; text-decoration: none; padding: 6px 10px; border-radius: 8px; font-size: .95rem; }
 @media (prefers-color-scheme: dark) { .nav a { color: var(--text); } }
 .nav a:hover, .nav a[aria-current="page"] { background: rgba(255, 255, 255, .16); }
 @media (prefers-color-scheme: dark) { .nav a:hover, .nav a[aria-current="page"] { background: var(--surface-2); } }
-.menu-toggle { display: none; margin-left: auto; background: transparent; color: inherit; border: 1px solid currentColor; border-radius: 8px; padding: 6px 12px; font: inherit; }
+.menu-toggle { display: none; order: 2; background: transparent; color: inherit; border: 1px solid currentColor; border-radius: 8px; padding: 6px 12px; font: inherit; }
 @media (prefers-color-scheme: dark) { .menu-toggle { color: var(--text); } }
 
 @media (max-width: 900px) {
@@ -250,6 +263,20 @@ textarea.essay { width: 100%; min-height: 360px; font: 1.02rem/1.7 var(--serif);
 .s1 { fill: var(--brand-2); }
 .s2 { fill: var(--accent); }
 .s3 { fill: var(--l1); }
+.s4 { fill: #8a5bb5; }
+.s5 { fill: #c9a227; }
+.s6 { fill: #7a8794; }
+.chart .slice { stroke: var(--surface); stroke-width: 2; }
+.chart .pie-title { fill: var(--text); font-weight: 700; font-size: 14px; }
+.chart .pie-label { fill: #fff; font-weight: 700; font-size: 12px; }
+.chart .map-frame { fill: var(--surface-2); stroke: var(--line); }
+.m-building { fill: color-mix(in srgb, var(--accent) 35%, var(--surface)); stroke: var(--accent); }
+.m-green { fill: color-mix(in srgb, var(--l1) 30%, var(--surface)); stroke: var(--l1); }
+.m-water { fill: color-mix(in srgb, var(--brand-2) 30%, var(--surface)); stroke: var(--brand-2); }
+.m-road { fill: var(--line); stroke: var(--muted); }
+.chart .m-label { fill: var(--text); font-size: 11px; }
+.chart-part { margin-bottom: 16px; }
+.chart-part > h3 { font-size: 1rem; margin: 0 0 6px; }
 .chart .l1 { stroke: var(--brand-2); fill: none; stroke-width: 2.5; }
 .chart .l2 { stroke: var(--accent); fill: none; stroke-width: 2.5; }
 .chart .l3 { stroke: var(--l1); fill: none; stroke-width: 2.5; }

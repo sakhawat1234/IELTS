@@ -12,7 +12,7 @@ export default function home(root) {
   root.innerHTML = `
 <section class="hero">
   <h1>From zero to band 7</h1>
-  <p class="lead">A complete, free course for IELTS Academic: a placement check, a 12-week plan, ${lessons.length} lessons across all four skills, auto-marked practice, timed writing and speaking, vocabulary flashcards and a mock test. Your progress is saved in this browser.</p>
+  <p class="lead">A complete, free course for IELTS Academic: a placement check, a 12-week plan, ${lessons.length} lessons across all four skills, auto-marked practice, timed writing and speaking, 370 vocabulary words with Bengali meanings, a Part 1 topic bank and a mock test. Bengali help (বাংলা) can be switched on or off with the button at the top. Your progress is saved in this browser.</p>
   <div class="row">
     ${placed
       ? `<a class="btn" href="${next ? next[1] : '#/plan'}">${next ? 'Continue: ' + next[0] : 'Open your study plan'}</a><a class="btn btn--ghost" href="#/progress">Your progress</a>`
@@ -25,8 +25,8 @@ ${placed ? `<div class="card card--soft"><div class="row"><div><strong>Your star
 <h2>Three stages to band 7</h2>
 <div class="path">
   <div class="card"><h3>${LEVELS[1].name}</h3><p class="muted small">${LEVELS[1].bands} · weeks 1–4</p><p>How each paper works, accuracy with numbers and spelling, core grammar, and your first complete answers in every skill.</p></div>
-  <div class="card"><h3>${LEVELS[2].name}</h3><p class="muted small">${LEVELS[2].bands} · weeks 5–8</p><p>Strategies for each question type, the structure of Task 1 and Task 2, and speaking at length with confidence.</p></div>
-  <div class="card"><h3>${LEVELS[3].name}</h3><p class="muted small">${LEVELS[3].bands} · weeks 9–12</p><p>What separates band 6 from 7: developed ideas, precise language, paraphrase, timing, and practice under test conditions.</p></div>
+  <div class="card"><h3>${LEVELS[2].name}</h3><p class="muted small">${LEVELS[2].bands} · weeks 5–9</p><p>Strategies for each question type, the structure of Task 1 and Task 2, and speaking at length with confidence.</p></div>
+  <div class="card"><h3>${LEVELS[3].name}</h3><p class="muted small">${LEVELS[3].bands} · weeks 10–12</p><p>What separates band 6 from 7: developed ideas, precise language, paraphrase, timing, and practice under test conditions.</p></div>
 </div>
 
 <h2>The four skills</h2>
@@ -39,7 +39,7 @@ ${placed ? `<div class="card card--soft"><div class="row"><div><strong>Your star
 </div>
 
 <div class="grid grid--2">
-  <a class="card card--link" href="#/vocabulary"><h3>Vocabulary</h3><p class="muted">Eight essential IELTS topics with flashcards that bring back the words you find hard more often.</p></a>
+  <a class="card card--link" href="#/vocabulary"><h3>Vocabulary</h3><p class="muted">Sixteen IELTS topics plus academic and linking-word lists — 370 words with Bengali meanings and flashcards that bring back the words you find hard.</p></a>
   <a class="card card--link" href="#/grammar"><h3>Grammar</h3><p class="muted">The structures that lift Grammatical Range and Accuracy from band 5 to band 7, each with an exercise.</p></a>
 </div>
 
@@ -49,7 +49,7 @@ ${placed ? `<div class="card card--soft"><div class="row"><div><strong>Your star
 function nextTask(s) {
   for (const w of weeks) {
     for (let i = 0; i < w.tasks.length; i++) {
-      if (!s.plan[`w${w.week}t${i}`]) return w.tasks[i];
+      if (!s.plan[`v2w${w.week}t${i}`]) return w.tasks[i];
     }
   }
   return null;

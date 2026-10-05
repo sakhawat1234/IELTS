@@ -1,5 +1,5 @@
 import { store } from '../store.js';
-import { crumbs, levelPill, countdown, esc } from '../util.js';
+import { crumbs, levelPill, countdown, esc, glossary } from '../util.js';
 import { renderQuiz, gradeQuiz, marksIn } from '../quiz.js';
 import { passageById } from '../data/reading.js';
 import { bandFor, bandLabel } from '../bands.js';
@@ -24,6 +24,7 @@ ${exam ? '<div class="note note--warn"><p><strong>Test conditions:</strong> the 
   <article class="card exam__passage passage" tabindex="0" aria-label="Reading passage">
     <h2 style="margin-top:0">${esc(p.title)}</h2>
     ${p.paragraphs.map(([label, text]) => `<p><span class="para-label">${label}</span>${esc(text)}</p>`).join('')}
+    ${!exam && p.glossary ? `<details class="small" style="font-family:var(--font)"><summary>Difficult words <span class="bn" lang="bn">· কঠিন শব্দের অর্থ</span></summary>${glossary(p.glossary, 'Word')}<p class="muted">Try the passage first without this list. In the real test there is no glossary, so guessing from context is a skill to practise.</p></details>` : ''}
   </article>
   <form class="card" id="quiz">
     ${renderQuiz(p.groups, { name: 'rd' })}
@@ -52,6 +53,7 @@ ${exam ? '<div class="note note--warn"><p><strong>Test conditions:</strong> the 
   <div class="row"><div><div class="stat">${score} / ${total}</div><div class="muted">${pct}% correct</div></div><span class="spacer"></span><div style="text-align:right"><div class="band">≈ ${bandLabel(band)}</div><div class="small muted">estimated band if you scored like this across 40 questions</div></div></div>
   <p style="margin-top:12px">${advice(pct)}</p>
   <div class="row"><a class="btn" href="#/reading/${p.id}">Try again</a><a class="btn btn--ghost" href="#/reading">More reading practice</a></div>
+  ${exam && p.glossary ? `<h3>Difficult words</h3>${glossary(p.glossary, 'Word')}` : ''}
   <p class="small muted">Each question above now shows the answer and where the evidence is in the passage. Reading the explanations for the ones you got right as well is the fastest way to improve.</p>
 </div>`;
   };
