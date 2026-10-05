@@ -1,7 +1,7 @@
-import { store } from '../store.js';
-import { crumbs, levelPill, esc, LEVELS } from '../util.js';
-import { renderQuiz, gradeQuiz } from '../quiz.js';
-import { units, unitById } from '../data/grammar.js';
+import { store } from '../store.js?v=20261005b';
+import { crumbs, levelPill, esc, LEVELS } from '../util.js?v=20261005b';
+import { renderQuiz, gradeQuiz } from '../quiz.js?v=20261005b';
+import { units, unitById } from '../data/grammar.js?v=20261005b';
 
 export default function grammar(root, { id }) {
   if (!id) return index(root);

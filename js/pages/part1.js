@@ -1,5 +1,5 @@
-import { crumbs, esc, bn, glossary } from '../util.js';
-import { part1Bank } from '../data/speaking.js';
+import { crumbs, esc, bn, glossary } from '../util.js?v=20261005b';
+import { part1Bank } from '../data/speaking.js?v=20261005b';
 
 export default function part1(root) {
   root.innerHTML = `

@@ -1,6 +1,6 @@
-import { store } from '../store.js';
-import { crumbs, LEVELS, esc } from '../util.js';
-import { weeks, dailyHabits } from '../data/plan.js';
+import { store } from '../store.js?v=20261005b';
+import { crumbs, LEVELS, esc } from '../util.js?v=20261005b';
+import { weeks, dailyHabits } from '../data/plan.js?v=20261005b';
 
 export default function plan(root) {
   const paint = () => {

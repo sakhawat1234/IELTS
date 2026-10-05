@@ -1,7 +1,7 @@
-import { store } from '../store.js';
-import { crumbs, esc, formatDate } from '../util.js';
-import { lessons } from '../data/lessons.js';
-import { overallBand, bandLabel } from '../bands.js';
+import { store } from '../store.js?v=20261005b';
+import { crumbs, esc, formatDate } from '../util.js?v=20261005b';
+import { lessons } from '../data/lessons.js?v=20261005b';
+import { overallBand, bandLabel } from '../bands.js?v=20261005b';
 
 function average(list) {
   return list.length ? Math.round((list.reduce((a, b) => a + b, 0) / list.length) * 2) / 2 : null;

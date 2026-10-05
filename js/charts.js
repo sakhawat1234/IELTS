@@ -1,7 +1,7 @@
 // Accessible SVG charts for Writing Task 1. Colours come from CSS, so the
 // charts follow light and dark mode.
 
-import { esc } from './util.js';
+import { esc } from './util.js?v=20261005b';
 
 const W = 640;
 const H = 340;

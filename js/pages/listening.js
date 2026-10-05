@@ -1,8 +1,8 @@
-import { store } from '../store.js';
-import { crumbs, levelPill, esc } from '../util.js';
-import { renderQuiz, gradeQuiz, marksIn } from '../quiz.js';
-import { setById } from '../data/listening.js';
-import { bandFor, bandLabel } from '../bands.js';
+import { store } from '../store.js?v=20261005b';
+import { crumbs, levelPill, esc } from '../util.js?v=20261005b';
+import { renderQuiz, gradeQuiz, marksIn } from '../quiz.js?v=20261005b';
+import { setById } from '../data/listening.js?v=20261005b';
+import { bandFor, bandLabel } from '../bands.js?v=20261005b';
 
 const FEMALE = /female|samantha|victoria|karen|moira|tessa|serena|zira|hazel|susan|libby|sonia|natasha|kate|fiona|martha|catherine|aria|jenny|emma|amy/i;
 const MALE = /\bmale|daniel|alex\b|fred|arthur|oliver|david|george|ryan|thomas|james|guy|rishi|gordon|lee|aaron|brian/i;

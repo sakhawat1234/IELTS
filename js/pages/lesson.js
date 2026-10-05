@@ -1,7 +1,7 @@
-import { store } from '../store.js';
-import { SKILLS, crumbs, levelPill, glossary, esc } from '../util.js';
-import { renderQuiz, gradeQuiz } from '../quiz.js';
-import { lessonById, lessonsFor } from '../data/lessons.js';
+import { store } from '../store.js?v=20261005b';
+import { SKILLS, crumbs, levelPill, glossary, esc } from '../util.js?v=20261005b';
+import { renderQuiz, gradeQuiz } from '../quiz.js?v=20261005b';
+import { lessonById, lessonsFor } from '../data/lessons.js?v=20261005b';
 
 export default function lesson(root, { id }) {
   const l = lessonById(id);

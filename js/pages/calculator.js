@@ -1,5 +1,5 @@
-import { crumbs } from '../util.js';
-import { bandFor, overallBand, bandLabel, rawNeeded } from '../bands.js';
+import { crumbs } from '../util.js?v=20261005b';
+import { bandFor, overallBand, bandLabel, rawNeeded } from '../bands.js?v=20261005b';
 
 const HALF_BANDS = [];
 for (let b = 9; b >= 1; b -= 0.5) HALF_BANDS.push(b);

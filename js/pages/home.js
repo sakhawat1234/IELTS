@@ -1,7 +1,7 @@
-import { store } from '../store.js';
-import { SKILLS, LEVELS } from '../util.js';
-import { lessons, lessonsFor } from '../data/lessons.js';
-import { weeks } from '../data/plan.js';
+import { store } from '../store.js?v=20261005b';
+import { SKILLS, LEVELS } from '../util.js?v=20261005b';
+import { lessons, lessonsFor } from '../data/lessons.js?v=20261005b';
+import { weeks } from '../data/plan.js?v=20261005b';
 
 export default function home(root) {
   const s = store.get();

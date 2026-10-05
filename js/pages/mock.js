@@ -1,6 +1,6 @@
-import { store } from '../store.js';
-import { crumbs } from '../util.js';
-import { overallBand, bandLabel, bandFor } from '../bands.js';
+import { store } from '../store.js?v=20261005b';
+import { crumbs } from '../util.js?v=20261005b';
+import { overallBand, bandLabel, bandFor } from '../bands.js?v=20261005b';
 
 // The mock strings together the hardest practice items in test order,
 // under test conditions, then combines them into an estimated overall band.

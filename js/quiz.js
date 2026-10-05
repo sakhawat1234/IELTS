@@ -8,7 +8,7 @@
 //   type 'gap'    item: { q: 'text with ___ in it', answer: 'word' | ['word', 'variant'], explain }
 //   type 'match'  group.options: [{ value: 'iv', label: '...' }], item: { q, answer: 'iv', explain }
 
-import { esc, normalise, wordCount } from './util.js';
+import { esc, normalise, wordCount } from './util.js?v=20261005b';
 
 const LETTERS = 'ABCDEFGHIJ';
 

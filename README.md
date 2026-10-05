@@ -62,6 +62,13 @@ Question groups use one format everywhere (see the comment at the top of
 `js/quiz.js`): `mcq`, `multi` (choose TWO), `tfng`, `ynng`, `gap` (with an
 optional `maxWords` limit) and `match`.
 
+## Publishing an update
+
+Run `sh tools/version.sh` before committing. It stamps every script and
+the stylesheet with a new version (`?v=...`), so visitors' browsers load
+the new files together instead of mixing cached old files with new ones,
+which breaks pages with "Something went wrong".
+
 ## Notes
 
 - Listening needs a browser with English speech voices — current Chrome, Edge

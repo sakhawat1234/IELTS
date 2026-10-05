@@ -69,12 +69,13 @@ async function render() {
   }
 
   try {
-    const mod = await import(`./pages/${found.page}.js`);
+    const mod = await import(`./pages/${found.page}.js?v=20261005b`);
     root.innerHTML = '';
     cleanup = mod.default(root, found.params) || null;
   } catch (err) {
     console.error(err);
-    root.innerHTML = `<h1>Something went wrong</h1><p>This page could not load. Try reloading. If it keeps happening, the details are in the browser console.</p>`;
+    root.innerHTML = `<h1>Something went wrong</h1><p>This page could not load. This usually happens just after the site has been updated. Reload the page; if it keeps happening, the details are in the browser console.</p><p><button class="btn" type="button" id="reload">Reload</button></p>`;
+    root.querySelector('#reload').addEventListener('click', () => window.location.reload());
   }
 
   const h1 = root.querySelector('h1');

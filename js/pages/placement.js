@@ -1,7 +1,7 @@
-import { store } from '../store.js';
-import { crumbs, LEVELS } from '../util.js';
-import { renderQuiz, gradeQuiz } from '../quiz.js';
-import { placement, recommend } from '../data/placement.js';
+import { store } from '../store.js?v=20261005b';
+import { crumbs, LEVELS } from '../util.js?v=20261005b';
+import { renderQuiz, gradeQuiz } from '../quiz.js?v=20261005b';
+import { placement, recommend } from '../data/placement.js?v=20261005b';
 
 export default function placementPage(root) {
   const previous = store.get().placement;

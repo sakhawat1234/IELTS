@@ -1,8 +1,8 @@
-import { store } from '../store.js';
-import { crumbs, levelPill, countdown, esc, glossary } from '../util.js';
-import { renderQuiz, gradeQuiz, marksIn } from '../quiz.js';
-import { passageById } from '../data/reading.js';
-import { bandFor, bandLabel } from '../bands.js';
+import { store } from '../store.js?v=20261005b';
+import { crumbs, levelPill, countdown, esc, glossary } from '../util.js?v=20261005b';
+import { renderQuiz, gradeQuiz, marksIn } from '../quiz.js?v=20261005b';
+import { passageById } from '../data/reading.js?v=20261005b';
+import { bandFor, bandLabel } from '../bands.js?v=20261005b';
 
 export default function reading(root, { id, query }) {
   const p = passageById(id);

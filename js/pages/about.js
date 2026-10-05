@@ -1,4 +1,4 @@
-import { crumbs } from '../util.js';
+import { crumbs } from '../util.js?v=20261005b';
 
 export default function about(root) {
   root.innerHTML = `

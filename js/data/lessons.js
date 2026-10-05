@@ -1,7 +1,7 @@
-import listening from './lessons-listening.js';
-import reading from './lessons-reading.js';
-import writing from './lessons-writing.js';
-import speaking from './lessons-speaking.js';
+import listening from './lessons-listening.js?v=20261005b';
+import reading from './lessons-reading.js?v=20261005b';
+import writing from './lessons-writing.js?v=20261005b';
+import speaking from './lessons-speaking.js?v=20261005b';
 
 // The order inside each file is the teaching order. Modules group lessons
 // on the skill pages.

@@ -1,7 +1,7 @@
-import { store } from '../store.js';
-import { crumbs, levelPill, countdown, esc, glossary } from '../util.js';
-import { setById, descriptors } from '../data/speaking.js';
-import { bandLabel } from '../bands.js';
+import { store } from '../store.js?v=20261005b';
+import { crumbs, levelPill, countdown, esc, glossary } from '../util.js?v=20261005b';
+import { setById, descriptors } from '../data/speaking.js?v=20261005b';
+import { bandLabel } from '../bands.js?v=20261005b';
 
 const BANDS = [4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9];
 

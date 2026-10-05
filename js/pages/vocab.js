@@ -1,6 +1,6 @@
-import { store } from '../store.js';
-import { crumbs, esc, shuffle, LEVELS, bn } from '../util.js';
-import { topics, academic, linking, topicById, wordKey } from '../data/vocab.js';
+import { store } from '../store.js?v=20261005b';
+import { crumbs, esc, shuffle, LEVELS, bn } from '../util.js?v=20261005b';
+import { topics, academic, linking, topicById, wordKey } from '../data/vocab.js?v=20261005b';
 
 // Leitner boxes: how many days until a card in each box comes back.
 const INTERVAL_DAYS = [0, 1, 3, 7, 16, 35];

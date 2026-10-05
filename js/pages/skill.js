@@ -1,11 +1,11 @@
-import { store } from '../store.js';
-import { SKILLS, crumbs, levelPill, esc } from '../util.js';
-import { lessonsFor, MODULES } from '../data/lessons.js';
-import { passages } from '../data/reading.js';
-import { sets as listeningSets } from '../data/listening.js';
-import { tasks } from '../data/writing.js';
-import { sets as speakingSets } from '../data/speaking.js';
-import { bandLabel } from '../bands.js';
+import { store } from '../store.js?v=20261005b';
+import { SKILLS, crumbs, levelPill, esc } from '../util.js?v=20261005b';
+import { lessonsFor, MODULES } from '../data/lessons.js?v=20261005b';
+import { passages } from '../data/reading.js?v=20261005b';
+import { sets as listeningSets } from '../data/listening.js?v=20261005b';
+import { tasks } from '../data/writing.js?v=20261005b';
+import { sets as speakingSets } from '../data/speaking.js?v=20261005b';
+import { bandLabel } from '../bands.js?v=20261005b';
 
 export default function skill(root, { skill: key }) {
   const s = store.get();
