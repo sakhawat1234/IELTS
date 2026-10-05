@@ -1,0 +1,211 @@
+// Listening sets. The browser reads the script aloud with its built-in
+// speech voices, so no audio files are needed; the transcript is shown
+// after marking (or straight away if this browser has no voices).
+//
+// speakers: role -> { name, gender: 'f' | 'm', pitch, rate }
+
+export const sets = [
+  {
+    id: 'sports-centre',
+    part: 1,
+    level: 1,
+    title: 'Joining a sports centre',
+    context: 'A man phones a sports centre to become a member.',
+    speakers: {
+      R: { name: 'Receptionist', gender: 'f', pitch: 1.1 },
+      C: { name: 'Caller', gender: 'm', pitch: 0.9 },
+    },
+    script: [
+      ['R', 'Good morning, Riverside Sports Centre. How can I help?'],
+      ['C', 'Hi. I\'d like to join the centre, please. Could you take my details over the phone?'],
+      ['R', 'Of course. Can I have your name?'],
+      ['C', 'Yes, it\'s Daniel Kowalski.'],
+      ['R', 'Could you spell your surname for me?'],
+      ['C', 'Sure. K, O, W, A, L, S, K, I.'],
+      ['R', 'Thank you. And your address?'],
+      ['C', 'It\'s forty-two Hollis Road. That\'s H, O, double L, I, S.'],
+      ['R', 'Forty-two Hollis Road. And a contact number?'],
+      ['C', 'My mobile is oh seven nine four six, two two one, eight three oh.'],
+      ['R', 'Let me read that back. Oh seven nine four six, two two one, eight three oh. Great. Now, which membership would you like? We have the standard membership, which is twenty-five pounds a month, and the off-peak, which is eighteen pounds.'],
+      ['C', 'What times does off-peak cover?'],
+      ['R', 'Weekdays before four in the afternoon, and all day at weekends.'],
+      ['C', 'Hmm. I work during the day, so off-peak sounds cheaper, but actually I\'d hardly use it. I\'ll take the standard.'],
+      ['R', 'No problem. And how did you hear about us? Was it our website?'],
+      ['C', 'No, a colleague recommended you, actually.'],
+      ['R', 'Lovely. Do you have any injuries or health conditions we should know about?'],
+      ['C', 'Just my knee. I had an operation on it last year, but it\'s fine now.'],
+      ['R', 'Thanks, I\'ll note that for the trainer. Every new member gets a free induction session. Is Thursday evening good for you?'],
+      ['C', 'Thursday\'s difficult. Could we do Friday instead?'],
+      ['R', 'Friday at six thirty?'],
+      ['C', 'Perfect.'],
+      ['R', 'When you come, please bring some photo ID, like a passport or driving licence, and we\'ll take your picture for your membership card.'],
+      ['C', 'Great. Thanks very much.'],
+    ],
+    groups: [
+      {
+        type: 'gap',
+        instructions: 'Complete the form.',
+        limit: 'ONE WORD AND/OR A NUMBER for each answer',
+        maxWords: 2,
+        items: [
+          { q: 'Surname: ___', answer: 'Kowalski', explain: 'Spelled out: K-O-W-A-L-S-K-I.' },
+          { q: 'Address: ___ Hollis Road', answer: ['42', 'forty-two', 'forty two'], explain: '"forty-two Hollis Road".' },
+          { q: 'Mobile number: ___', answer: ['07946 221830', '07946221830', '079 46 221830', '07946 221 830'], explain: '"oh" means zero: 07946 221830.' },
+          { q: 'Type of membership: ___', answer: 'standard', explain: 'He considers off-peak, then says "I\'ll take the standard".' },
+          { q: 'Cost per month: £ ___', answer: ['25', '25.00', 'twenty-five'], explain: 'Standard is £25. £18 is the off-peak price — a distractor.' },
+          { q: 'Heard about the centre from a ___', answer: 'colleague', explain: 'The receptionist suggests the website; he says no — a colleague.' },
+          { q: 'Previous injury: ___', answer: 'knee', explain: '"Just my knee."' },
+          { q: 'Induction session: ___ at 6.30 pm', answer: 'Friday', explain: 'Thursday is offered first, then changed to Friday.' },
+          { q: 'Bring: photo ___', answer: ['ID', 'identification'], explain: '"please bring some photo ID".' },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'harbour-museum',
+    part: 2,
+    level: 2,
+    title: 'A museum introduction',
+    context: 'A guide welcomes visitors to a museum.',
+    speakers: {
+      G: { name: 'Guide', gender: 'f', pitch: 1.05 },
+    },
+    script: [
+      ['G', 'Good morning, everyone, and welcome to the Harbour Museum. My name\'s Priya, and I\'ll be giving you a quick introduction before you explore on your own.'],
+      ['G', 'First, a little background. The building you\'re standing in was originally a customs house, built in eighteen fifty-six to collect taxes on goods arriving by ship. It became a museum in nineteen seventy-two, although the collection itself is older. It began with objects donated by local sailors\' families in the early nineteen hundreds.'],
+      ['G', 'Now, a few practical points. The museum closes at five today, rather than the usual six, because there\'s a private event this evening. Photography is allowed everywhere except the special exhibition on the top floor, where some of the items are on loan from other museums. And if you\'d like a coffee, I\'d recommend the café on the ground floor rather than the kiosk outside, which is only open in summer.'],
+      ['G', 'Let me tell you where things are. On the ground floor you\'ll find the shipbuilding gallery, with models of every vessel built in this harbour. The first floor is home to our maps and navigation instruments. Don\'t miss the eighteenth-century compass, which is the oldest item we have. The second floor tells the story of the fishing industry, and that\'s where children usually head first, because there\'s a hands-on area where they can practise tying knots and lift a real lobster pot. Finally, the top floor has this year\'s special exhibition, on shipwrecks along this coast.'],
+      ['G', 'One last thing. There\'s a free talk on the history of the lighthouse at two o\'clock. It was going to be in the lecture room, but we\'ve moved it to the shipbuilding gallery because we\'re expecting a large group. Enjoy your visit.'],
+    ],
+    groups: [
+      {
+        type: 'mcq',
+        instructions: 'Choose the correct letter, A, B or C.',
+        items: [
+          { q: 'The museum building was first used as', options: ['a museum.', 'a customs house.', 'a home for sailors.'], answer: 'B', explain: '"originally a customs house".' },
+          { q: 'The museum\'s collection began with', options: ['objects given by sailors\' families.', 'a gift from the city council.', 'items bought in 1972.'], answer: 'A', explain: '"objects donated by local sailors\' families".' },
+          { q: 'Today the museum will close at', options: ['4 pm.', '5 pm.', '6 pm.'], answer: 'B', explain: '"closes at five today, rather than the usual six".' },
+          { q: 'Visitors may not take photographs', options: ['on the ground floor.', 'in the café.', 'in the special exhibition.'], answer: 'C', explain: '"everywhere except the special exhibition".' },
+        ],
+      },
+      {
+        type: 'match',
+        instructions: 'Where in the museum can visitors find the following? Choose the correct letter, A–D.',
+        optionsTitle: 'Floors',
+        options: [
+          { value: 'A', label: 'ground floor' },
+          { value: 'B', label: 'first floor' },
+          { value: 'C', label: 'second floor' },
+          { value: 'D', label: 'top floor' },
+        ],
+        items: [
+          { q: 'the oldest object in the museum', answer: 'B', explain: 'The eighteenth-century compass is on the first floor.' },
+          { q: 'an activity area for children', answer: 'C', explain: 'The hands-on area is on the second floor.' },
+          { q: 'information about shipwrecks', answer: 'D', explain: 'The special exhibition on the top floor.' },
+          { q: 'today\'s talk about the lighthouse', answer: 'A', explain: 'Moved from the lecture room to the shipbuilding gallery, on the ground floor.' },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'food-waste',
+    part: 3,
+    level: 2,
+    title: 'A student research project',
+    context: 'Two students, Maya and Tom, discuss their project on food waste with their tutor.',
+    speakers: {
+      T: { name: 'Tutor', gender: 'm', pitch: 0.85, rate: 0.95 },
+      M: { name: 'Maya', gender: 'f', pitch: 1.15 },
+      O: { name: 'Tom', gender: 'm', pitch: 1.0, rate: 1.05 },
+    },
+    script: [
+      ['T', 'So, Maya, Tom, how\'s the project on food waste in the halls of residence going?'],
+      ['M', 'Pretty well, I think. In the end we decided to focus on the shared kitchens rather than the canteen.'],
+      ['O', 'We did think about the canteen at first, but the catering company wouldn\'t give us access to their figures.'],
+      ['T', 'That\'s a shame, but the kitchens are probably more interesting anyway. How are you measuring the waste?'],
+      ['M', 'We considered asking students to keep a diary, but people forget, or they don\'t want to admit how much they throw away. So we\'re weighing the food bins in each kitchen twice a week.'],
+      ['T', 'Good. That\'s much more reliable. What have you found so far?'],
+      ['O', 'Well, we\'d assumed the biggest category would be fruit and vegetables. But by far the largest is bread. It\'s nearly a third of the total.'],
+      ['M', 'And it\'s mostly whole loaves, not just crusts. People buy a loaf, use half of it, and the rest goes stale.'],
+      ['T', 'Interesting. Any idea why?'],
+      ['M', 'Partly it\'s that the local shop only sells loaves in one size, and a student living alone just can\'t finish one before it goes off.'],
+      ['O', 'The other reason is that the kitchens don\'t have enough freezer space, so people can\'t freeze half of it. It isn\'t really about the price — bread\'s cheap.'],
+      ['T', 'Those are both worth discussing. What about solutions? You mentioned a trial.'],
+      ['O', 'Yes. We\'re putting an extra freezer shelf in two kitchens and seeing whether bread waste falls compared with the others.'],
+      ['T', 'Good, that gives you a comparison group. Now, for the final report, I\'d suggest you cut down the literature review. It\'s rather long at the moment. Give more space to your method instead. That\'s where the project is strongest.'],
+      ['M', 'OK. Should we include the photos of the bins?'],
+      ['T', 'One or two, in an appendix. Not in the main text.'],
+    ],
+    groups: [
+      {
+        type: 'mcq',
+        instructions: 'Choose the correct letter, A, B or C.',
+        items: [
+          { q: 'Why did the students decide not to study the canteen?', options: ['Too few students used it.', 'The company would not share its data.', 'Their tutor advised against it.'], answer: 'B', explain: '"the catering company wouldn\'t give us access to their figures".' },
+          { q: 'How are the students measuring food waste?', options: ['by asking students to keep diaries', 'by weighing the bins', 'by photographing the bins'], answer: 'B', explain: 'Diaries were considered and rejected; they weigh the bins twice a week.' },
+          { q: 'What surprised the students about their results?', options: ['how much fruit was wasted', 'that bread was the largest category', 'that most bread waste was crusts'], answer: 'B', explain: 'They expected fruit and vegetables; bread was "by far the largest". Crusts are specifically ruled out.' },
+        ],
+      },
+      {
+        type: 'multi',
+        instructions: 'Choose TWO letters, A–E.',
+        items: [
+          {
+            q: 'Which TWO reasons for bread waste do the students give?',
+            options: ['Loaves are too big for one person.', 'Students do not like bread.', 'There is not enough freezer space.', 'Bread is too expensive.', 'The bread is of poor quality.'],
+            answer: ['A', 'C'],
+            explain: 'Loaves come in one size a single student cannot finish, and there is not enough freezer space. Price is explicitly rejected.',
+          },
+        ],
+      },
+      {
+        type: 'mcq',
+        instructions: 'Choose the correct letter, A, B or C.',
+        items: [
+          { q: 'What does the students\' trial involve?', options: ['selling cheaper bread', 'adding freezer space in two kitchens', 'introducing smaller loaves'], answer: 'B', explain: '"an extra freezer shelf in two kitchens".' },
+          { q: 'What does the tutor recommend for the report?', options: ['shortening the literature review', 'adding more photographs', 'writing a longer appendix'], answer: 'A', explain: '"cut down the literature review". Photos go in the appendix, but only one or two.' },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 'heat-islands',
+    part: 4,
+    level: 3,
+    title: 'Lecture: urban heat islands',
+    context: 'A lecturer gives a talk about why cities are warmer than the countryside.',
+    speakers: {
+      L: { name: 'Lecturer', gender: 'm', pitch: 0.95, rate: 1.05 },
+    },
+    script: [
+      ['L', 'Today I want to look at a phenomenon that affects almost every large city: the urban heat island. The term describes the way cities are warmer than the surrounding countryside, sometimes by several degrees. And the difference is usually greatest at night, rather than during the day.'],
+      ['L', 'Let\'s start with the causes. The first is the materials cities are built from. Concrete, brick and asphalt absorb heat from the sun during the day and release it slowly after dark, which is why city nights stay warm. The second cause is the lack of vegetation. Plants cool the air through a process called transpiration. Essentially, they release water vapour, much as we sweat. Replace a park with a car park, and you lose that cooling. Third, there\'s heat produced directly by human activity. Air conditioners, vehicles and factories all add heat. Ironically, air conditioning makes the problem worse outside, even as it cools the inside of buildings.'],
+      ['L', 'Why does this matter? The most serious effect is on health. During heatwaves, death rates rise faster in cities than in rural areas, and elderly people are the most vulnerable. There\'s also an economic cost. Higher temperatures increase the demand for electricity, mainly for cooling.'],
+      ['L', 'So what can be done? One approach is to change the colour of surfaces. Roofs painted white, or another light colour, reflect sunlight instead of absorbing it, and some cities now require this on new buildings. A second approach is green roofs, which are covered with plants. As well as cooling the air, they absorb rainwater, which reduces flooding. And the third, of course, is planting more trees along streets. A mature tree provides shade, and measurements suggest that shaded pavements can be many degrees cooler than unshaded ones. The challenge is that trees take decades to mature, so planting needs to start now.'],
+    ],
+    groups: [
+      {
+        type: 'gap',
+        instructions: 'Complete the notes.',
+        limit: 'ONE WORD ONLY for each answer',
+        maxWords: 1,
+        items: [
+          { q: 'Temperature difference with the countryside is greatest at ___', answer: 'night', explain: '"greatest at night, rather than during the day".' },
+          { q: 'Cause 1: concrete, brick and ___ store heat from the sun', answer: 'asphalt', explain: '"Concrete, brick and asphalt absorb heat".' },
+          { q: 'Cause 2: plants cool the air by a process called ___', answer: 'transpiration', explain: '"a process called transpiration".' },
+          { q: 'Cause 3: heat from human activity, e.g. air ___, vehicles, factories', answer: ['conditioners', 'conditioning'], explain: '"Air conditioners, vehicles and factories".' },
+          { q: 'Effect: during heatwaves, ___ people are most at risk', answer: 'elderly', explain: '"elderly people are the most vulnerable".' },
+          { q: 'Effect: greater demand for ___', answer: 'electricity', explain: '"increase the demand for electricity".' },
+          { q: 'Solution: light-coloured roofs ___ sunlight', answer: 'reflect', explain: '"reflect sunlight instead of absorbing it".' },
+          { q: 'Solution: green roofs also absorb ___', answer: ['rainwater', 'rain'], explain: '"they absorb rainwater".' },
+          { q: 'Solution: street trees, but they take ___ to mature', answer: 'decades', explain: '"trees take decades to mature".' },
+        ],
+      },
+    ],
+  },
+];
+
+export const setById = (id) => sets.find((s) => s.id === id);
